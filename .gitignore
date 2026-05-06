@@ -1,0 +1,13 @@
+# environment variables
+.env
+
+# virtual environments
+.venv/
+
+# DBT logs
+logs/
+
+# DBT project directory
+red_one_dbt_redshift/target/
+red_one_dbt_redshift/dbt_packages/
+red_one_dbt_redshift/logs/
