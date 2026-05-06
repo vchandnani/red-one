@@ -1,0 +1,7 @@
+version: 2
+sources:
+  - name: dev_public
+    database: dev
+    schema: public
+    tables:
+      - name: trades_analytical

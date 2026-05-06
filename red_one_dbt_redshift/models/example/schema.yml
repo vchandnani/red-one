@@ -19,3 +19,38 @@ models:
         data_tests:
           - unique
           - not_null
+
+  - name: stage_trades
+    description: "A staging table for trades data"
+    columns:
+      - name: trade_id
+        description: "The unique identifier for each trade"
+        data_tests:
+          - unique
+          - not_null
+      - name: quantity
+        description: "The quantity of the trade"
+        data_tests:
+          - not_null
+      - name: price
+        description: "The price of the trade"
+        data_tests:
+          - not_null
+
+  - name: dimension_account
+    description: "A dimension table for account data"
+    columns:
+      - name: account_id
+        tests:
+          - unique
+          - not_null
+
+  - name: fact_account_positions
+    description: "A fact table for account positions"
+    columns:
+      - name: account_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dimension_account')
+              field: account_id
